@@ -4,6 +4,27 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-paper: oklch(0.985 0.008 75);
+  --color-ink: oklch(0.18 0.005 60);
+  --color-gold: oklch(0.72 0.085 75);
+  --color-rose: oklch(0.87 0.035 25);
+  --color-beige: oklch(0.94 0.018 70);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-reveal {
+  animation: reveal 1.2s var(--ease-out-expo) both;
+}
+
 /*
  * Design system definition.
  *
