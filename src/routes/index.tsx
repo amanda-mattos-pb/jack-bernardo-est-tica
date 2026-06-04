@@ -1,12 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
-import heroPortrait from "@/assets/hero-portrait.jpg";
-import aboutMarble from "@/assets/about-marble.jpg";
-import result1Before from "@/assets/result-1-before.jpg";
-import result1After from "@/assets/result-1-after.jpg";
-import result2Before from "@/assets/result-2-before.jpg";
-import result2After from "@/assets/result-2-after.jpg";
+import heroPortrait from "@/assets/jack-portrait.jpeg.asset.json";
+import aboutImg from "@/assets/jack-about.jpeg.asset.json";
+import resultLabial from "@/assets/antes-depois-labial.jpeg.asset.json";
+import resultPerna from "@/assets/antes-depois-perna.jpeg.asset.json";
+import logo from "@/assets/logo.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,10 +20,10 @@ export const Route = createFileRoute("/")({
 });
 
 const procedures = [
-  { n: "01.", t: "Limpeza de Pele", d: "Desintoxicação profunda e renovação celular para um brilho imediato." },
-  { n: "02.", t: "Peelings Químicos", d: "Tratamento de manchas e textura para uma pele uniforme e radiante." },
-  { n: "03.", t: "Microagulhamento", d: "Indução de colágeno para redução de rugas e cicatrizes." },
-  { n: "04.", t: "Harmonização Facial", d: "Equilíbrio e realce dos traços com sutileza e elegância." },
+  { n: "01.", t: "Preenchimento Labial", d: "Mais volume, contorno definido e harmonia para lábios naturalmente mais bonitos." },
+  { n: "02.", t: "Definição de Perna", d: "Pernas mais firmes, torneadas e com contornos definidos." },
+  { n: "03.", t: "Harmonização Facial", d: "Equilíbrio e realce dos traços com sutileza e elegância." },
+  { n: "04.", t: "Limpeza de Pele", d: "Desintoxicação profunda e renovação celular para um brilho imediato." },
   { n: "05.", t: "Drenagem Linfática", d: "Redução de edemas e melhora da circulação com técnica exclusiva." },
   { n: "06.", t: "Radiofrequência", d: "Combate à flacidez com tecnologia de aquecimento profundo." },
 ];
@@ -57,11 +56,11 @@ function Index() {
           </div>
           <div className="md:col-span-5 animate-reveal [animation-delay:200ms]">
             <img
-              src={heroPortrait}
+              src={heroPortrait.url}
               alt="Jack Bernardo — profissional de estética avançada"
               width={1088}
               height={1344}
-              className="w-full aspect-[4/5] object-cover bg-rose/20"
+              className="w-full aspect-[4/5] object-cover object-top bg-rose/20"
             />
           </div>
         </div>
@@ -72,8 +71,8 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-24 items-center">
           <div className="relative">
             <img
-              src={aboutMarble}
-              alt="Produtos de skincare em superfície de mármore"
+              src={aboutImg.url}
+              alt="Jack Bernardo em ambiente sofisticado"
               width={800}
               height={1000}
               loading="lazy"
@@ -126,22 +125,16 @@ function Index() {
           </div>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-2">
-                <img src={result1Before} alt="Antes do tratamento facial" width={800} height={800} loading="lazy" className="aspect-square object-cover bg-white/10" />
-                <img src={result1After} alt="Depois do tratamento facial" width={800} height={800} loading="lazy" className="aspect-square object-cover bg-white/10" />
-              </div>
+              <img src={resultLabial.url} alt="Antes e depois — Preenchimento Labial" loading="lazy" className="w-full object-contain bg-white/5" />
               <div className="flex justify-between items-center px-2">
-                <span className="text-[10px] uppercase tracking-widest">Tratamento Facial</span>
-                <span className="text-[10px] uppercase tracking-widest text-gold">4 Sessões</span>
+                <span className="text-[10px] uppercase tracking-widest">Preenchimento Labial</span>
+                <span className="text-[10px] uppercase tracking-widest text-gold">Resultado Imediato</span>
               </div>
             </div>
             <div className="space-y-6">
-              <div className="grid grid-cols-2 gap-2">
-                <img src={result2Before} alt="Antes da harmonização" width={800} height={800} loading="lazy" className="aspect-square object-cover bg-white/10" />
-                <img src={result2After} alt="Depois da harmonização" width={800} height={800} loading="lazy" className="aspect-square object-cover bg-white/10" />
-              </div>
+              <img src={resultPerna.url} alt="Antes e depois — Definição de Perna" loading="lazy" className="w-full object-contain bg-white/5" />
               <div className="flex justify-between items-center px-2">
-                <span className="text-[10px] uppercase tracking-widest">Harmonização Facial</span>
+                <span className="text-[10px] uppercase tracking-widest">Definição de Perna</span>
                 <span className="text-[10px] uppercase tracking-widest text-gold">Protocolo Jack B.</span>
               </div>
             </div>
@@ -180,11 +173,15 @@ function Index() {
             <div className="space-y-8 font-mono text-[11px] uppercase tracking-wider">
               <div>
                 <p className="text-gold mb-2">Endereço</p>
-                <p>Av. das Américas, 500 — Barra da Tijuca, RJ</p>
+                <p>Rua do Riachuelo, 325 — Cond. Edifício Elano, sala 508<br />Boa Vista, Recife — PE</p>
+              </div>
+              <div>
+                <p className="text-gold mb-2">WhatsApp</p>
+                <p>(81) 99293-9016</p>
               </div>
               <div>
                 <p className="text-gold mb-2">Social</p>
-                <p>@jackbernardo.estetica</p>
+                <p>@jackbernardoesteticaavancada</p>
               </div>
               <div>
                 <p className="text-gold mb-2">Atendimento</p>
@@ -214,7 +211,8 @@ function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-ink/5 text-center">
+      <footer className="py-12 border-t border-ink/5 text-center flex flex-col items-center gap-4">
+        <img src={logo.url} alt="Jack Bernardo" className="h-16 w-auto object-contain" />
         <p className="text-[10px] uppercase tracking-widest text-ink/60">© {new Date().getFullYear()} Jack Bernardo. Estética de Resultados.</p>
       </footer>
 

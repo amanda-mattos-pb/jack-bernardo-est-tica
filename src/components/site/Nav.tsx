@@ -1,8 +1,12 @@
+import logo from "@/assets/logo.jpeg.asset.json";
+
 export function Nav() {
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-ink/5 bg-paper/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#home" className="font-display text-2xl tracking-widest uppercase">Jack Bernardo</a>
+        <a href="#home" className="flex items-center gap-2">
+          <img src={logo.url} alt="Jack Bernardo — Estética Avançada" className="h-12 w-auto object-contain" />
+        </a>
         <div className="hidden md:flex gap-8 text-[10px] uppercase tracking-[0.2em] font-medium">
           <a href="#sobre" className="hover:text-gold transition-colors">Sobre</a>
           <a href="#procedimentos" className="hover:text-gold transition-colors">Procedimentos</a>
