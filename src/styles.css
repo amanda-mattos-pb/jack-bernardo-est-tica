@@ -27,6 +27,52 @@
   animation: reveal 1.2s var(--ease-out-expo) both;
 }
 
+@keyframes float-slow {
+  0%, 100% { transform: translate3d(0,0,0) rotate(0deg); }
+  50% { transform: translate3d(0,-22px,0) rotate(6deg); }
+}
+@keyframes float-slower {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(14px,-14px,0) scale(1.05); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.72 0.105 55 / 0.45); }
+  50% { box-shadow: 0 0 0 18px oklch(0.72 0.105 55 / 0); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@utility animate-float { animation: float-slow 9s ease-in-out infinite; }
+@utility animate-float-slow { animation: float-slower 14s ease-in-out infinite; }
+@utility animate-spin-slow { animation: spin-slow 40s linear infinite; }
+@utility animate-pulse-glow { animation: pulse-glow 2.4s ease-out infinite; }
+@utility shimmer-text {
+  background: linear-gradient(90deg, var(--color-cocoa) 0%, var(--color-gold) 45%, var(--color-cocoa) 90%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+@utility text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-gold), oklch(0.85 0.08 60), var(--color-cocoa));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility bg-grain {
+  background-image: radial-gradient(oklch(0.45 0.06 40 / 0.07) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
 /*
  * Design system definition.
  *
