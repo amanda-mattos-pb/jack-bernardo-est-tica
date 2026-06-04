@@ -81,9 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Estética avançada com resultados naturais. Tratamentos faciais, harmonização e protocolos exclusivos por Jack Bernardo." },
       { name: "author", content: "Jack Bernardo" },
       { property: "og:title", content: "Jack Bernardo — Estética Avançada" },
-      { property: "og:description", content: "Tratamentos personalizados que unem ciência e sofisticação para resultados naturais e duradouros." },
+      { property: "og:description", content: "Estética avançada com resultados naturais. Tratamentos faciais, harmonização e protocolos exclusivos por Jack Bernardo." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Jack Bernardo — Estética Avançada" },
+      { name: "twitter:description", content: "Estética avançada com resultados naturais. Tratamentos faciais, harmonização e protocolos exclusivos por Jack Bernardo." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01b3b954-cd66-4594-ba40-203ab1a6d968/id-preview-34da26a5--c053d99c-8560-4720-832c-12d1dabc49ff.lovable.app-1780599097111.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/01b3b954-cd66-4594-ba40-203ab1a6d968/id-preview-34da26a5--c053d99c-8560-4720-832c-12d1dabc49ff.lovable.app-1780599097111.png" },
     ],
     links: [
       {
