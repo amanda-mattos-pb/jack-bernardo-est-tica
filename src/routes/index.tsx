@@ -8,8 +8,8 @@ const aboutImg = "/images/jack-about.jpeg";
 const resultLabial = "/images/antes-depois-labial.jpeg";
 const resultPerna = "/images/antes-depois-perna.jpeg";
 const logo = "/images/logo.jpeg";
-const corporalBanner = "/images/whatsapp_image_2026-07-01_at_12.15.18_(1).jpeg";
-const facialBanner = "/images/whatsapp_image_2026-07-01_at_12.15.18_(2).jpeg";
+const corporalBanner = "/images/whatsapp_image_2026-07-01_at_12.15.19.jpeg";
+const facialBanner = "/images/whatsapp_image_2026-07-01_at_12.15.19_(1).jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
