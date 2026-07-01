@@ -11,7 +11,20 @@ export function Nav() {
         </a>
         <div className="hidden md:flex gap-8 text-[10px] uppercase tracking-[0.2em] font-medium">
           <a href="#sobre" className="hover:text-gold transition-colors">Sobre</a>
-          <a href="#procedimentos" className="hover:text-gold transition-colors">Procedimentos</a>
+          <a
+            href="#procedimentos"
+            onClick={() => window.dispatchEvent(new CustomEvent("change-tab", { detail: "facial" }))}
+            className="hover:text-gold transition-colors"
+          >
+            Facial
+          </a>
+          <a
+            href="#procedimentos"
+            onClick={() => window.dispatchEvent(new CustomEvent("change-tab", { detail: "corporal" }))}
+            className="hover:text-gold transition-colors"
+          >
+            Corporal
+          </a>
           <a href="#resultados" className="hover:text-gold transition-colors">Resultados</a>
           <a href="#depoimentos" className="hover:text-gold transition-colors">Depoimentos</a>
           <a href="#contato" className="hover:text-gold transition-colors">Contato</a>

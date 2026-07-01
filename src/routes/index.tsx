@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
@@ -50,6 +50,15 @@ const testimonials = [
 
 function Index() {
   const [activeTab, setActiveTab] = useState<'facial' | 'corporal'>('facial');
+
+  useEffect(() => {
+    const handleTabChange = (e: Event) => {
+      const customEvent = e as CustomEvent<'facial' | 'corporal'>;
+      setActiveTab(customEvent.detail);
+    };
+    window.addEventListener("change-tab", handleTabChange);
+    return () => window.removeEventListener("change-tab", handleTabChange);
+  }, []);
 
   return (
     <div className="bg-peach/40 text-ink font-sans selection:bg-rose/40 overflow-x-hidden">
