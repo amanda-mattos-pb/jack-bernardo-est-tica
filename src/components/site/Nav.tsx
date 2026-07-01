@@ -1,12 +1,10 @@
-import logo from "@/assets/logo-transparent.png.asset.json";
-
 export function Nav() {
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-gold/15 bg-paper/75 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2 group">
           <img
-            src={logo.url}
+            src="/images/logo.jpeg"
             alt="Jack Bernardo — Estética Avançada"
             className="h-16 md:h-20 w-auto object-contain drop-shadow-[0_4px_18px_rgba(201,168,108,0.45)] transition-transform duration-700 group-hover:scale-105"
           />

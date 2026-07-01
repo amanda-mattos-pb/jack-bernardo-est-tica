@@ -1,11 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
-import heroPortrait from "@/assets/jack-portrait.jpeg.asset.json";
-import aboutImg from "@/assets/jack-about.jpeg.asset.json";
-import resultLabial from "@/assets/antes-depois-labial.jpeg.asset.json";
-import resultPerna from "@/assets/antes-depois-perna.jpeg.asset.json";
-import logo from "@/assets/logo-transparent.png.asset.json";
+
+const heroPortrait = "/images/jack-portrait.jpeg";
+const aboutImg = "/images/jack-about.jpeg";
+const resultLabial = "/images/antes-depois-labial.jpeg";
+const resultPerna = "/images/antes-depois-perna.jpeg";
+const logo = "/images/logo.jpeg";
+const corporalBanner = "/images/whatsapp_image_2026-07-01_at_12.15.18_(1).jpeg";
+const facialBanner = "/images/whatsapp_image_2026-07-01_at_12.15.18_(2).jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -19,13 +23,23 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const procedures = [
-  { n: "01.", t: "Preenchimento Labial", d: "Mais volume, contorno definido e harmonia para lábios naturalmente mais bonitos." },
-  { n: "02.", t: "Definição de Perna", d: "Pernas mais firmes, torneadas e com contornos definidos." },
-  { n: "03.", t: "Harmonização Facial", d: "Equilíbrio e realce dos traços com sutileza e elegância." },
-  { n: "04.", t: "Limpeza de Pele", d: "Desintoxicação profunda e renovação celular para um brilho imediato." },
-  { n: "05.", t: "Drenagem Linfática", d: "Redução de edemas e melhora da circulação com técnica exclusiva." },
-  { n: "06.", t: "Radiofrequência", d: "Combate à flacidez com tecnologia de aquecimento profundo." },
+const facialProcedures = [
+  { n: "01.", t: "Preenchimento Labial", d: "Mais volume, contorno definido e hidratação para lábios naturalmente desenhados." },
+  { n: "02.", t: "Preenchimento de Mandíbula", d: "Definição do contorno facial, trazendo mais projeção e harmonia." },
+  { n: "03.", t: "Botox", d: "Suavização de linhas de expressão e rugas dinâmicas para um olhar descansado." },
+  { n: "04.", t: "Queixo (Mento)", d: "Harmonização do perfil facial através do preenchimento e projeção do mento." },
+  { n: "05.", t: "Bigode Chinês", d: "Preenchimento do sulco nasogeniano, devolvendo a jovialidade ao redor da boca." },
+  { n: "06.", t: "Peeling", d: "Renovação celular profunda, clareamento de manchas e melhora da textura da pele." },
+  { n: "07.", t: "Bioestimulador de Colágeno", d: "Estímulo natural da produção de colágeno para combater a flacidez facial." },
+];
+
+const corporalProcedures = [
+  { n: "01.", t: "Bumbum Volume", d: "Mais firmeza, volume e contorno arredondado para os glúteos." },
+  { n: "02.", t: "Pernas Definidas", d: "Pernas mais firmes, torneadas e com contornos bem definidos." },
+  { n: "03.", t: "Vasinhos", d: "Eliminação de vasinhos e microvasinhos para pernas mais leves e saudáveis." },
+  { n: "04.", t: "Gordura Localizada", d: "Redução de medidas e contorno corporal em áreas específicas." },
+  { n: "05.", t: "Celulite", d: "Suavização do aspecto casca de laranja e melhora da textura da pele." },
+  { n: "06.", t: "Flacidez Corporal", d: "Estímulo de colágeno para uma pele corporal mais firme e tonificada." },
 ];
 
 const testimonials = [
@@ -35,6 +49,8 @@ const testimonials = [
 ];
 
 function Index() {
+  const [activeTab, setActiveTab] = useState<'facial' | 'corporal'>('facial');
+
   return (
     <div className="bg-peach/40 text-ink font-sans selection:bg-rose/40 overflow-x-hidden">
       <Nav />
@@ -47,7 +63,7 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-grain opacity-40 mix-blend-multiply" />
         {/* Floating logo watermark */}
         <img
-          src={logo.url}
+          src={logo}
           aria-hidden="true"
           alt=""
           className="pointer-events-none select-none absolute top-24 right-6 md:right-16 w-40 md:w-72 opacity-[0.08] -rotate-12 animate-float-slow"
@@ -83,7 +99,7 @@ function Index() {
             <div className="absolute -top-6 -left-6 size-24 border border-gold/40 rounded-full animate-spin-slow" />
             <div className="absolute -bottom-6 -right-6 size-32 border border-cocoa/20 rounded-full" />
             <img
-              src={heroPortrait.url}
+              src={heroPortrait}
               alt="Jack Bernardo — profissional de estética avançada"
               width={1088}
               height={1344}
@@ -96,12 +112,12 @@ function Index() {
       {/* About */}
       <section id="sobre" className="py-32 bg-paper relative overflow-hidden">
         <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-        <img src={logo.url} aria-hidden="true" alt="" className="pointer-events-none absolute -bottom-10 -left-20 w-80 opacity-[0.06] rotate-6" />
+        <img src={logo} aria-hidden="true" alt="" className="pointer-events-none absolute -bottom-10 -left-20 w-80 opacity-[0.06] rotate-6" />
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-24 items-center">
           <div className="relative group">
             <div className="absolute -inset-3 bg-gradient-to-tr from-gold/30 via-rose/30 to-transparent rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
             <img
-              src={aboutImg.url}
+              src={aboutImg}
               alt="Jack Bernardo em ambiente sofisticado"
               width={800}
               height={1000}
@@ -135,28 +151,66 @@ function Index() {
       <section id="procedimentos" className="py-32 px-6 bg-gradient-to-b from-peach/40 via-paper to-peach/30 relative overflow-hidden">
         <div className="pointer-events-none absolute top-20 -right-20 w-[28rem] h-[28rem] rounded-full bg-rose/30 blur-3xl animate-float-slow" />
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4 inline-flex items-center gap-3">
               <span className="h-px w-10 bg-gold" /> O que ofereço <span className="h-px w-10 bg-gold" />
             </span>
             <h2 className="font-display text-5xl md:text-6xl text-gradient-gold">Procedimentos</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {procedures.map((p) => (
-              <div
-                key={p.n}
-                className="relative bg-paper p-10 rounded-3xl shadow-md shadow-cocoa/5 hover:shadow-2xl hover:shadow-gold/25 hover:-translate-y-2 transition-all duration-500 group cursor-pointer border border-gold/10 overflow-hidden"
-              >
-                <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute -right-10 -top-10 size-32 rounded-full bg-gradient-to-br from-rose/40 to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700" />
-                <span className="font-mono text-[10px] text-gold block mb-4">{p.n}</span>
-                <h3 className="font-display text-3xl mb-4 text-cocoa group-hover:italic group-hover:text-gold transition-all duration-500">{p.t}</h3>
-                <p className="text-sm text-ink/60 leading-relaxed">{p.d}</p>
-                <span className="mt-6 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-gold opacity-0 group-hover:opacity-100 transition-opacity">
-                  Saiba mais <span className="transition-transform group-hover:translate-x-1">→</span>
-                </span>
-              </div>
-            ))}
+
+          {/* Abas */}
+          <div className="flex justify-center gap-4 mb-16">
+            <button
+              onClick={() => setActiveTab("facial")}
+              className={`px-8 py-4 text-[10px] font-mono uppercase tracking-[0.25em] rounded-full transition-all duration-300 ${
+                activeTab === "facial"
+                  ? "bg-cocoa text-paper shadow-lg shadow-cocoa/20 ring-1 ring-gold/30"
+                  : "bg-paper/40 text-cocoa hover:bg-paper/80 border border-gold/15"
+              }`}
+            >
+              Procedimentos Faciais
+            </button>
+            <button
+              onClick={() => setActiveTab("corporal")}
+              className={`px-8 py-4 text-[10px] font-mono uppercase tracking-[0.25em] rounded-full transition-all duration-300 ${
+                activeTab === "corporal"
+                  ? "bg-cocoa text-paper shadow-lg shadow-cocoa/20 ring-1 ring-gold/30"
+                  : "bg-paper/40 text-cocoa hover:bg-paper/80 border border-gold/15"
+              }`}
+            >
+              Procedimentos Corporais
+            </button>
+          </div>
+
+          {/* Grid Geral com Banner Lateral e Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Banner Lateral */}
+            <div className="lg:col-span-5 relative group">
+              <div className="absolute -inset-2 bg-gradient-to-tr from-gold/30 via-rose/30 to-transparent rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-700" />
+              <img
+                src={activeTab === "facial" ? facialBanner : corporalBanner}
+                alt={activeTab === "facial" ? "Procedimentos Faciais" : "Procedimentos Corporais"}
+                width={900}
+                height={1600}
+                className="relative w-full h-auto object-cover rounded-[2rem] shadow-xl shadow-cocoa/25 border border-gold/20 transition-transform duration-700 group-hover:scale-[1.02]"
+              />
+            </div>
+
+            {/* Grid de Cards dos Procedimentos */}
+            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {(activeTab === "facial" ? facialProcedures : corporalProcedures).map((p) => (
+                <div
+                  key={p.t}
+                  className="relative bg-paper p-8 rounded-3xl shadow-md shadow-cocoa/5 hover:shadow-2xl hover:shadow-gold/25 hover:-translate-y-1 transition-all duration-500 group border border-gold/10 overflow-hidden"
+                >
+                  <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute -right-10 -top-10 size-24 rounded-full bg-gradient-to-br from-rose/40 to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700" />
+                  <span className="font-mono text-[10px] text-gold block mb-3">{p.n}</span>
+                  <h3 className="font-display text-2xl mb-3 text-cocoa group-hover:italic group-hover:text-gold transition-all duration-500">{p.t}</h3>
+                  <p className="text-xs text-ink/65 leading-relaxed">{p.d}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -175,7 +229,7 @@ function Index() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="group space-y-6 bg-paper/5 p-6 rounded-3xl border border-gold/20 hover:border-gold/50 hover:bg-paper/10 transition-all duration-700 backdrop-blur-sm">
               <div className="overflow-hidden rounded-2xl">
-                <img src={resultLabial.url} alt="Antes e depois — Preenchimento Labial" loading="lazy" className="w-full object-contain bg-white/5 transition-transform duration-700 group-hover:scale-105" />
+                <img src={resultLabial} alt="Antes e depois — Preenchimento Labial" loading="lazy" className="w-full object-contain bg-white/5 transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="flex justify-between items-center px-2">
                 <span className="text-[10px] uppercase tracking-widest">Preenchimento Labial</span>
@@ -184,7 +238,7 @@ function Index() {
             </div>
             <div className="group space-y-6 bg-paper/5 p-6 rounded-3xl border border-gold/20 hover:border-gold/50 hover:bg-paper/10 transition-all duration-700 backdrop-blur-sm">
               <div className="overflow-hidden rounded-2xl">
-                <img src={resultPerna.url} alt="Antes e depois — Definição de Perna" loading="lazy" className="w-full object-contain bg-white/5 transition-transform duration-700 group-hover:scale-105" />
+                <img src={resultPerna} alt="Antes e depois — Definição de Perna" loading="lazy" className="w-full object-contain bg-white/5 transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="flex justify-between items-center px-2">
                 <span className="text-[10px] uppercase tracking-widest">Definição de Perna</span>
@@ -226,7 +280,7 @@ function Index() {
 
       {/* Contact */}
       <section id="contato" className="py-32 bg-gradient-to-br from-peach/60 via-paper to-rose/40 px-6 relative overflow-hidden">
-        <img src={logo.url} aria-hidden="true" alt="" className="pointer-events-none absolute -top-10 -right-20 w-96 opacity-[0.08] rotate-12 animate-float-slow" />
+        <img src={logo} aria-hidden="true" alt="" className="pointer-events-none absolute -top-10 -right-20 w-96 opacity-[0.08] rotate-12 animate-float-slow" />
         <div className="pointer-events-none absolute -bottom-40 -left-40 w-[35rem] h-[35rem] rounded-full bg-gold/20 blur-3xl" />
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
           <div>
@@ -260,12 +314,12 @@ function Index() {
             <input type="tel" placeholder="Telefone / WhatsApp" className="w-full bg-peach/30 border border-gold/10 rounded-full px-6 py-4 text-sm focus:outline-none focus:border-gold transition-colors" />
             <select defaultValue="" className="w-full bg-peach/30 border border-gold/10 rounded-full px-6 py-4 text-sm focus:outline-none focus:border-gold transition-colors appearance-none">
               <option value="" disabled>Selecione o procedimento</option>
-              <option>Preenchimento Labial</option>
-              <option>Definição de Perna</option>
-              <option>Harmonização Facial</option>
-              <option>Limpeza de Pele</option>
-              <option>Drenagem Linfática</option>
-              <option>Radiofrequência</option>
+              <optgroup label="Facial">
+                {facialProcedures.map((p) => <option key={p.t}>{p.t}</option>)}
+              </optgroup>
+              <optgroup label="Corporal">
+                {corporalProcedures.map((p) => <option key={p.t}>{p.t}</option>)}
+              </optgroup>
             </select>
             <textarea placeholder="Mensagem (opcional)" rows={3} className="w-full bg-peach/30 border border-gold/10 rounded-2xl px-6 py-4 text-sm focus:outline-none focus:border-gold transition-colors resize-none" />
             <button type="submit" className="group relative w-full overflow-hidden bg-gradient-to-r from-gold via-[oklch(0.8_0.11_60)] to-gold text-paper py-5 text-[11px] uppercase tracking-[0.25em] rounded-full hover:from-cocoa hover:to-cocoa transition-all shadow-xl shadow-gold/30 mt-4">
@@ -279,7 +333,7 @@ function Index() {
       {/* Footer */}
       <footer className="py-16 bg-gradient-to-b from-paper to-peach/50 text-center flex flex-col items-center gap-6 relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40rem] h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-        <img src={logo.url} alt="Jack Bernardo" className="h-24 w-auto object-contain drop-shadow-[0_6px_24px_rgba(201,168,108,0.45)]" />
+        <img src={logo} alt="Jack Bernardo" className="h-24 w-auto object-contain drop-shadow-[0_6px_24px_rgba(201,168,108,0.45)]" />
         <p className="text-[10px] uppercase tracking-[0.3em] text-ink/60">© {new Date().getFullYear()} Jack Bernardo · Estética de Resultados</p>
       </footer>
 
