@@ -48,8 +48,20 @@ const testimonials = [
   { q: "Profissionalismo raro. A Jack entende exatamente o que cada rosto precisa.", a: "Beatriz L. — Advogada" },
 ];
 
+const resultsData = [
+  { img: "/images/antes-depois-labial.jpeg", t: "Preenchimento Labial", desc: "Resultado Imediato", cat: "Facial" },
+  { img: "/images/antes-depois-perna.jpeg", t: "Definição de Perna", desc: "Protocolo Jack B.", cat: "Pernas & Vasinhos" },
+  { img: "/images/whatsapp_image_2026-07-01_at_12.15.34.jpeg", t: "Harmonização de Glúteos", desc: "Remodelação do Bumbum", cat: "Glúteos" },
+  { img: "/images/whatsapp_image_2026-07-01_at_12.15.20_(2).jpeg", t: "Flacidez Abdominal", desc: "Regeneração de Colágeno", cat: "Flacidez & Celulite" },
+  { img: "/images/whatsapp_image_2026-07-01_at_12.15.19_(2).jpeg", t: "Gordura Abdominal", desc: "Redução de Medidas", cat: "Barriga" },
+  { img: "/images/whatsapp_image_2026-07-01_at_12.15.18.jpeg", t: "Redução de Culote/Flancos", desc: "Definição de Cintura", cat: "Barriga" },
+  { img: "/images/whatsapp_image_2026-07-01_at_12.15.36_(2).jpeg", t: "Secagem de Vasinhos (PEIM)", desc: "Tratamento de Microvasos", cat: "Pernas & Vasinhos" },
+  { img: "/images/whatsapp_image_2026-07-01_at_12.15.20_(1).jpeg", t: "Tratamento de Celulite", desc: "Uniformização de Pele", cat: "Flacidez & Celulite" },
+];
+
 function Index() {
   const [activeTab, setActiveTab] = useState<'facial' | 'corporal'>('facial');
+  const [activeFilter, setActiveFilter] = useState<string>("Todos");
 
   useEffect(() => {
     const handleTabChange = (e: Event) => {
@@ -206,20 +218,108 @@ function Index() {
             </div>
 
             {/* Grid de Cards dos Procedimentos */}
-            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {(activeTab === "facial" ? facialProcedures : corporalProcedures).map((p) => (
-                <div
-                  key={p.t}
-                  className="relative bg-paper p-8 rounded-3xl shadow-md shadow-cocoa/5 hover:shadow-2xl hover:shadow-gold/25 hover:-translate-y-1 transition-all duration-500 group border border-gold/10 overflow-hidden"
-                >
-                  <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute -right-10 -top-10 size-24 rounded-full bg-gradient-to-br from-rose/40 to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700" />
-                  <span className="font-mono text-[10px] text-gold block mb-3">{p.n}</span>
-                  <h3 className="font-display text-2xl mb-3 text-cocoa group-hover:italic group-hover:text-gold transition-all duration-500">{p.t}</h3>
-                  <p className="text-xs text-ink/65 leading-relaxed">{p.d}</p>
+            {activeTab === "facial" ? (
+              <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 animate-reveal">
+                {facialProcedures.map((p) => (
+                  <div
+                    key={p.t}
+                    className="relative bg-paper p-8 rounded-3xl shadow-md shadow-cocoa/5 hover:shadow-2xl hover:shadow-gold/25 hover:-translate-y-1 transition-all duration-500 group border border-gold/10 overflow-hidden"
+                  >
+                    <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute -right-10 -top-10 size-24 rounded-full bg-gradient-to-br from-rose/40 to-transparent opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-700" />
+                    <span className="font-mono text-[10px] text-gold block mb-3">{p.n}</span>
+                    <h3 className="font-display text-2xl mb-3 text-cocoa group-hover:italic group-hover:text-gold transition-all duration-500">{p.t}</h3>
+                    <p className="text-xs text-ink/65 leading-relaxed">{p.d}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="lg:col-span-7 space-y-8 animate-reveal">
+                {/* Injetáveis Corporais Card */}
+                <div className="bg-paper p-8 rounded-3xl border border-gold/15 shadow-md hover:shadow-xl transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-2xl">💉</span>
+                    <h3 className="font-display text-2xl text-cocoa font-semibold">Injetáveis Corporais</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Bioestimulador de colágeno",
+                      "Preenchimento de glúteo",
+                      "BCAA para definição muscular",
+                      "Enzimas para gordura localizada",
+                      "Enzimas para celulite",
+                      "Enzimas para flacidez",
+                      "Intradermoterapia corporal",
+                      "Plasma Gel",
+                      "PEIM (secagem de vasinhos)",
+                      "Skinbooster corporal",
+                      "Mesoterapia",
+                      "Lipolíticos",
+                      "Tratamento para estrias",
+                      "Hidrolipoclasia",
+                      "Regeneração tecidual"
+                    ].map((item, index) => (
+                      <span key={index} className="px-4 py-2 bg-peach/30 text-ink/80 text-[11px] font-mono uppercase tracking-wider rounded-full border border-gold/10">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              ))}
-            </div>
+
+                {/* Tratamentos Mais Procurados Card */}
+                <div className="bg-paper p-8 rounded-3xl border border-gold/15 shadow-md hover:shadow-xl transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-2xl">✨</span>
+                    <h3 className="font-display text-2xl text-cocoa font-semibold">Tratamentos Mais Procurados</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Harmonização de glúteos",
+                      "Definição de pernas",
+                      "Redução de culote",
+                      "Afinamento de cintura",
+                      "Redução de gordura abdominal",
+                      "Tratamento de celulite",
+                      "Flacidez de braços",
+                      "Flacidez interna de coxa",
+                      "Remodelação do bumbum",
+                      "Definição corporal feminina",
+                      "Redução de papada",
+                      "Estrias"
+                    ].map((item, index) => (
+                      <span key={index} className="px-4 py-2 bg-peach/30 text-ink/80 text-[11px] font-mono uppercase tracking-wider rounded-full border border-gold/10">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Clareamentos Estéticos Card */}
+                <div className="bg-paper p-8 rounded-3xl border border-gold/15 shadow-md hover:shadow-xl transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-2xl">🌟</span>
+                    <h3 className="font-display text-2xl text-cocoa font-semibold">Clareamentos Estéticos</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2.5">
+                    {[
+                      "Clareamento íntimo",
+                      "Clareamento de axilas",
+                      "Clareamento de virilha",
+                      "Clareamento de joelhos",
+                      "Clareamento de cotovelos",
+                      "Clareamento de glúteos",
+                      "Clareamento de região interna das coxas",
+                      "Clareamento pós-inflamatório",
+                      "Tratamento para manchas corporais"
+                    ].map((item, index) => (
+                      <span key={index} className="px-4 py-2 bg-peach/30 text-ink/80 text-[11px] font-mono uppercase tracking-wider rounded-full border border-gold/10">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -229,31 +329,53 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-grain opacity-30 mix-blend-overlay" />
         <div className="pointer-events-none absolute -top-40 left-1/4 w-[40rem] h-[40rem] rounded-full bg-gold/10 blur-3xl animate-float-slow" />
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 relative">
+          <div className="text-center mb-16 relative">
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4 inline-flex items-center gap-3">
               <span className="h-px w-10 bg-gold" /> Antes & depois <span className="h-px w-10 bg-gold" />
             </span>
             <h2 className="font-display text-5xl md:text-6xl mb-4 text-paper">Resultados que <i className="text-gold">falam por si</i></h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="group space-y-6 bg-paper/5 p-6 rounded-3xl border border-gold/20 hover:border-gold/50 hover:bg-paper/10 transition-all duration-700 backdrop-blur-sm">
-              <div className="overflow-hidden rounded-2xl">
-                <img src={resultLabial} alt="Antes e depois — Preenchimento Labial" loading="lazy" className="w-full object-contain bg-white/5 transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="flex justify-between items-center px-2">
-                <span className="text-[10px] uppercase tracking-widest">Preenchimento Labial</span>
-                <span className="text-[10px] uppercase tracking-widest text-gold">Resultado Imediato</span>
-              </div>
-            </div>
-            <div className="group space-y-6 bg-paper/5 p-6 rounded-3xl border border-gold/20 hover:border-gold/50 hover:bg-paper/10 transition-all duration-700 backdrop-blur-sm">
-              <div className="overflow-hidden rounded-2xl">
-                <img src={resultPerna} alt="Antes e depois — Definição de Perna" loading="lazy" className="w-full object-contain bg-white/5 transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="flex justify-between items-center px-2">
-                <span className="text-[10px] uppercase tracking-widest">Definição de Perna</span>
-                <span className="text-[10px] uppercase tracking-widest text-gold">Protocolo Jack B.</span>
-              </div>
-            </div>
+
+          {/* Filtros da Galeria */}
+          <div className="flex flex-wrap justify-center gap-3 mb-16 relative z-10">
+            {["Todos", "Facial", "Glúteos", "Barriga", "Pernas & Vasinhos", "Flacidez & Celulite"].map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveFilter(cat)}
+                className={`px-6 py-3 text-[10px] font-mono uppercase tracking-wider rounded-full transition-all duration-300 cursor-pointer ${
+                  activeFilter === cat
+                    ? "bg-gold text-paper shadow-lg shadow-gold/25"
+                    : "bg-paper/10 text-paper hover:bg-paper/20 border border-gold/30"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Grid de Resultados */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {resultsData
+              .filter((r) => activeFilter === "Todos" || r.cat === activeFilter)
+              .map((r, index) => (
+                <div
+                  key={index}
+                  className="group space-y-4 bg-paper/5 p-5 rounded-3xl border border-gold/20 hover:border-gold/50 hover:bg-paper/10 transition-all duration-700 backdrop-blur-sm animate-reveal"
+                >
+                  <div className="overflow-hidden rounded-2xl aspect-[3/4]">
+                    <img
+                      src={r.img}
+                      alt={`Antes e depois — ${r.t}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover bg-white/5 transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex justify-between items-center px-2">
+                    <span className="text-[10px] uppercase tracking-widest">{r.t}</span>
+                    <span className="text-[10px] uppercase tracking-widest text-gold">{r.desc}</span>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </section>
