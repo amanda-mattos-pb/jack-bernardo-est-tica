@@ -177,7 +177,7 @@ function Index() {
                   : "bg-paper/40 text-cocoa hover:bg-paper/80 border border-gold/15"
               }`}
             >
-              Procedimentos Faciais
+              Tratamentos Faciais
             </button>
             <button
               onClick={() => setActiveTab("corporal")}
@@ -187,7 +187,7 @@ function Index() {
                   : "bg-paper/40 text-cocoa hover:bg-paper/80 border border-gold/15"
               }`}
             >
-              Procedimentos Corporais
+              Tratamentos Corporais
             </button>
           </div>
 
