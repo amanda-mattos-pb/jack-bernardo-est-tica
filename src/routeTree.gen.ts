@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as ResultadosRouteImport } from './routes/resultados'
+import { Route as MaisProcuradosRouteImport } from './routes/mais-procurados'
+import { Route as FaciaisRouteImport } from './routes/faciais'
+import { Route as CorporaisRouteImport } from './routes/corporais'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultadosRoute = ResultadosRouteImport.update({
+  id: '/resultados',
+  path: '/resultados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaisProcuradosRoute = MaisProcuradosRouteImport.update({
+  id: '/mais-procurados',
+  path: '/mais-procurados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaciaisRoute = FaciaisRouteImport.update({
+  id: '/faciais',
+  path: '/faciais',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CorporaisRoute = CorporaisRouteImport.update({
+  id: '/corporais',
+  path: '/corporais',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/corporais': typeof CorporaisRoute
+  '/faciais': typeof FaciaisRoute
+  '/mais-procurados': typeof MaisProcuradosRoute
+  '/resultados': typeof ResultadosRoute
+  '/sobre': typeof SobreRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/corporais': typeof CorporaisRoute
+  '/faciais': typeof FaciaisRoute
+  '/mais-procurados': typeof MaisProcuradosRoute
+  '/resultados': typeof ResultadosRoute
+  '/sobre': typeof SobreRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contato': typeof ContatoRoute
+  '/corporais': typeof CorporaisRoute
+  '/faciais': typeof FaciaisRoute
+  '/mais-procurados': typeof MaisProcuradosRoute
+  '/resultados': typeof ResultadosRoute
+  '/sobre': typeof SobreRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contato'
+    | '/corporais'
+    | '/faciais'
+    | '/mais-procurados'
+    | '/resultados'
+    | '/sobre'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contato'
+    | '/corporais'
+    | '/faciais'
+    | '/mais-procurados'
+    | '/resultados'
+    | '/sobre'
+  id:
+    | '__root__'
+    | '/'
+    | '/contato'
+    | '/corporais'
+    | '/faciais'
+    | '/mais-procurados'
+    | '/resultados'
+    | '/sobre'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContatoRoute: typeof ContatoRoute
+  CorporaisRoute: typeof CorporaisRoute
+  FaciaisRoute: typeof FaciaisRoute
+  MaisProcuradosRoute: typeof MaisProcuradosRoute
+  ResultadosRoute: typeof ResultadosRoute
+  SobreRoute: typeof SobreRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resultados': {
+      id: '/resultados'
+      path: '/resultados'
+      fullPath: '/resultados'
+      preLoaderRoute: typeof ResultadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mais-procurados': {
+      id: '/mais-procurados'
+      path: '/mais-procurados'
+      fullPath: '/mais-procurados'
+      preLoaderRoute: typeof MaisProcuradosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faciais': {
+      id: '/faciais'
+      path: '/faciais'
+      fullPath: '/faciais'
+      preLoaderRoute: typeof FaciaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/corporais': {
+      id: '/corporais'
+      path: '/corporais'
+      fullPath: '/corporais'
+      preLoaderRoute: typeof CorporaisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContatoRoute: ContatoRoute,
+  CorporaisRoute: CorporaisRoute,
+  FaciaisRoute: FaciaisRoute,
+  MaisProcuradosRoute: MaisProcuradosRoute,
+  ResultadosRoute: ResultadosRoute,
+  SobreRoute: SobreRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
