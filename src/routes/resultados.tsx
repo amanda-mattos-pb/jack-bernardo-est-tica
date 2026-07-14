@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { TratamentosTransformamSection } from '../components/site/TratamentosTransformamSection'
 import { BeforeAfterSlider } from '../components/site/BeforeAfterSlider'
+import { CallToAction } from '../components/site/CallToAction'
 
 export const Route = createFileRoute('/resultados')({
   component: ResultadosComponent,
@@ -67,6 +68,11 @@ function ResultadosComponent() {
           </div>
         </div>
       </section>
+      
+      <CallToAction 
+        title="Seja nossa próxima transformação" 
+        subtitle="Resultados reais começam com uma avaliação. Fale com a nossa equipe no WhatsApp." 
+      />
     </div>
   )
 }

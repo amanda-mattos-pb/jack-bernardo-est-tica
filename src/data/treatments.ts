@@ -14,6 +14,116 @@ export interface Treatment {
 export const treatmentsData: Treatment[] = [
   // FACIAIS
   {
+    id: "limpeza-de-pele",
+    name: "Limpeza de Pele Profunda",
+    subtitle: "Renovação celular, remoção de cravos e pele iluminada",
+    description: "A Limpeza de Pele Profunda é o primeiro passo para uma pele saudável. Ela desobstrui os poros, remove cravos (comedões), espinhas (pústulas) e o acúmulo de células mortas e poluição, garantindo uma pele com muito mais viço, maciez e preparada para absorver outros tratamentos.",
+    howItWorks: [
+      "Higienização profunda e esfoliação suave.",
+      "Emoliência com vapor de ozônio para facilitar a extração sem dor.",
+      "Extração manual cuidadosa de cravos e impurezas.",
+      "Aplicação de alta frequência (ação bactericida e cicatrizante) e máscara facial calmante."
+    ],
+    benefits: [
+      "Desobstrução e afinamento da pele",
+      "Prevenção de cravos e espinhas",
+      "Controle da oleosidade excessiva",
+      "Pele luminosa, macia e com textura uniforme",
+      "Melhora a absorção de dermocosméticos de uso diário"
+    ],
+    indications: "Indicado para todos os tipos de pele. Recomenda-se a realização a cada 30 ou 45 dias, dependendo da necessidade e oleosidade.",
+    category: "facial",
+    whatsappText: "Olá Jack, gostaria de agendar uma Limpeza de Pele."
+  },
+  {
+    id: "skinbooster",
+    name: "Skinbooster",
+    subtitle: "Hidratação injetável profunda para um brilho incomparável",
+    description: "O Skinbooster é um tratamento injetável que utiliza ácido hialurônico de baixa densidade (não volumizador) enriquecido com vitaminas. Diferente dos cremes, ele hidrata a pele de dentro para fora, melhorando a textura, suavizando linhas finas e devolvendo aquele brilho (glow) de pele jovem e saudável.",
+    howItWorks: [
+      "Aplicação de creme anestésico tópico para conforto da paciente.",
+      "Realizam-se microinjeções do produto em toda a face, pescoço ou colo.",
+      "O ácido hialurônico atrai água, formando um reservatório de hidratação na derme.",
+      "O resultado surge progressivamente ao longo de 30 dias."
+    ],
+    benefits: [
+      "Hidratação profunda e prolongada, impossível de alcançar com cremes",
+      "Melhora na elasticidade, firmeza e textura da pele",
+      "Suavização de rugas finas (como ao redor dos olhos e boca)",
+      "Devolve o brilho e a luminosidade (efeito glow)",
+      "Pode ser associado a outros tratamentos como Botox e Preenchimentos"
+    ],
+    indications: "Indicado para peles ressecadas, opacas, maduras ou jovens que buscam prevenção e uma pele radiante e profundamente hidratada.",
+    category: "facial",
+    whatsappText: "Olá Jack, gostaria de agendar uma avaliação para Skinbooster."
+  },
+  {
+    id: "microagulhamento",
+    name: "Microagulhamento (Indução Percutânea de Colágeno)",
+    subtitle: "Regeneração da pele, clareamento e tratamento de cicatrizes",
+    description: "O Microagulhamento utiliza um dispositivo com microagulhas para criar microlesões controladas na pele. Esse estímulo físico desencadeia um poderoso processo de cicatrização que induz a produção natural de muito colágeno e elastina. Durante a sessão, aplicamos ativos estéreis (Drug Delivery) que penetram profundamente na pele.",
+    howItWorks: [
+      "Assepsia rigorosa e aplicação de anestésico tópico potente.",
+      "O dispositivo desliza sobre a pele criando microcanais.",
+      "Ativos específicos (para clareamento, rejuvenescimento ou cicatrizes) são aplicados e absorvidos imediatamente.",
+      "A pele passa por um processo de vermelhidão temporária, com descamação leve nos dias seguintes."
+    ],
+    benefits: [
+      "Redução de cicatrizes de acne e poros dilatados",
+      "Clareamento de manchas e melasma",
+      "Aumento significativo na produção de colágeno e elastina",
+      "Melhora global da textura, firmeza e brilho da pele",
+      "Potencializa em até 400% a absorção de cosméticos"
+    ],
+    indications: "Indicado para tratamento de cicatrizes de acne, melasma, rugas finas, poros dilatados e rejuvenescimento global do rosto e pescoço.",
+    category: "facial",
+    whatsappText: "Olá Jack, gostaria de tirar dúvidas sobre o Microagulhamento."
+  },
+  {
+    id: "tratamento-de-papada",
+    name: "Tratamento de Papada (Enzimas ou Lipo sem cortes)",
+    subtitle: "Redução da gordura submentoniana e definição do contorno",
+    description: "O tratamento para a papada (queixo duplo) foca em eliminar o excesso de gordura localizada abaixo do queixo e melhorar o contorno facial. Através da aplicação de enzimas lipolíticas (que destroem a gordura) ou equipamentos de alta tecnologia, conseguimos devolver um perfil elegante e harmonioso.",
+    howItWorks: [
+      "Avaliação para definir se a causa é gordura, flacidez ou ambos.",
+      "No tratamento enzimático, aplicam-se microinjeções de ácido deoxicólico diretamente na gordura da papada.",
+      "A substância rompe as células de gordura, que são eliminadas naturalmente.",
+      "A pele se retrai, melhorando o ângulo cervicomentual (entre queixo e pescoço)."
+    ],
+    benefits: [
+      "Redução visível e definitiva da gordura sob o queixo",
+      "Melhora do contorno e harmonização do perfil facial",
+      "Procedimento rápido, seguro e minimamente invasivo",
+      "Evita a necessidade de procedimentos cirúrgicos complexos",
+      "Melhora a autoestima e a autoconfiança"
+    ],
+    indications: "Indicado para pacientes que possuem gordura submentoniana (papada) e desejam um pescoço mais alongado e contorno mandibular mais definido.",
+    category: "facial",
+    whatsappText: "Olá Jack, gostaria de agendar uma avaliação para Tratamento de Papada."
+  },
+  {
+    id: "remocao-de-sinais",
+    name: "Remoção de Sinais e Verrugas (Eletrocautério)",
+    subtitle: "Pele limpa, sem marcas e sinais indesejados",
+    description: "Um procedimento estético rápido e altamente eficaz para a remoção de pequenas lesões benignas como acrocórdons (verruguinhas no pescoço/axila), sinais superficiais e hiperplasias. Utilizando o eletrocautério, secamos a lesão na raiz com máxima precisão, sem sangramento e com excelente cicatrização.",
+    howItWorks: [
+      "Limpeza da área e aplicação de uma pequena dose de anestésico local.",
+      "O jato de energia térmica do eletrocautério é aplicado na base da lesão.",
+      "A lesão é vaporizada instantaneamente, formando uma crosta minúscula.",
+      "A crosta cai naturalmente em poucos dias, deixando a pele lisa e uniforme."
+    ],
+    benefits: [
+      "Remoção definitiva e imediata do sinal indesejado",
+      "Procedimento extremamente rápido (poucos minutos)",
+      "Altamente seguro, sem sangramentos",
+      "Excelente cicatrização, geralmente sem deixar marcas",
+      "Conforto total com o uso de anestesia local"
+    ],
+    indications: "Indicado para remoção de sinais benignos superficiais, verrugas pingentes (acrocórdons) em pescoço e axilas, e pequenas lesões estéticas, após avaliação.",
+    category: "facial",
+    whatsappText: "Olá Jack, gostaria de avaliar alguns sinais para remoção."
+  },
+  {
     id: "toxina-botulinica",
     name: "Toxina Botulínica (Botox)",
     subtitle: "Suavização de rugas dinâmicas e rejuvenescimento do olhar",

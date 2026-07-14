@@ -1,14 +1,10 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { Treatment } from "@/data/treatments";
 import { Phone, Check, Award, Compass, HeartPulse } from "lucide-react";
+import { useTreatment } from "@/context/TreatmentContext";
 
-interface TreatmentModalProps {
-  treatment: Treatment | null;
-  isOpen: boolean;
-  onClose: () => void;
-}
+export function TreatmentModal() {
+  const { selectedTreatment: treatment, isModalOpen: isOpen, closeModal: onClose } = useTreatment();
 
-export function TreatmentModal({ treatment, isOpen, onClose }: TreatmentModalProps) {
   if (!treatment) return null;
 
   const phone = "5581992939016";

@@ -2,15 +2,15 @@ import { OrbitLayout } from "./OrbitLayout";
 
 export function TratamentosFaciaisOrbitSection() {
   const leftItems = [
-    { image: "/images/real_facial_1.jpg", label: "Limpeza de Pele" },
-    { image: "/images/real_facial_2.jpg", label: "Peeling" },
-    { image: "/images/real_facial_3.jpg", label: "Microagulhamento" }
+    { image: "/images/real_facial_1.jpg", label: "Limpeza de Pele", id: "limpeza-de-pele" },
+    { image: "/images/real_facial_2.jpg", label: "Peeling", id: "peeling" },
+    { image: "/images/real_facial_3.jpg", label: "Microagulhamento", id: "microagulhamento" }
   ];
 
   const rightItems = [
-    { image: "/images/real_facial_2.jpg", label: "Skinbooster" },
-    { image: "/images/real_facial_1.jpg", label: "Tratamento de Papada" },
-    { image: "/images/real_facial_3.jpg", label: "Remoção de Sinais" }
+    { image: "/images/real_facial_2.jpg", label: "Skinbooster", id: "skinbooster" },
+    { image: "/images/real_facial_1.jpg", label: "Tratamento de Papada", id: "tratamento-de-papada" },
+    { image: "/images/real_facial_3.jpg", label: "Remoção de Sinais", id: "remocao-de-sinais" }
   ];
 
   return (

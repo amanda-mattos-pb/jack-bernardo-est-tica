@@ -64,7 +64,6 @@ export function Index() {
           </div>
         </div>
       </section>
-      </div>
     </div>
   );
 }

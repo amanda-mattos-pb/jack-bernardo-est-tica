@@ -1,8 +1,10 @@
 import { ReactNode } from "react";
+import { useTreatment } from "../../context/TreatmentContext";
 
 export interface OrbitItem {
   image: string;
   label: string;
+  id?: string;
 }
 
 export function OrbitLayout({
@@ -114,10 +116,13 @@ export function OrbitLayout({
 }
 
 function OrbitCircle({ item, align, offset = 0 }: { item: OrbitItem, align: "left" | "right" | "center", offset?: number }) {
+  const { openTreatmentDetails } = useTreatment();
+  
   return (
     <div 
       className={`flex flex-col items-center group cursor-pointer transition-transform duration-500 hover:scale-105`}
       style={{ transform: `translateX(${align === 'left' ? -offset : align === 'right' ? offset : 0}px)` }}
+      onClick={() => openTreatmentDetails(item.id || item.label)}
     >
       <div className="w-32 h-32 md:w-36 md:h-36 rounded-full shadow-2xl shadow-cocoa/30 relative overflow-hidden mb-3 bg-peach">
          <div className="absolute inset-0 border-4 border-gold rounded-full z-10 pointer-events-none" />

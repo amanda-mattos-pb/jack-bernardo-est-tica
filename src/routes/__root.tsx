@@ -14,6 +14,8 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/site/Nav";
 import { Footer } from "../components/site/Footer";
 import { WhatsAppButton } from "../components/site/WhatsAppButton";
+import { TreatmentProvider } from "../context/TreatmentContext";
+import { TreatmentModal } from "../components/site/TreatmentModal";
 
 function NotFoundComponent() {
   return (
@@ -127,14 +129,20 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex flex-col min-h-screen">
-        <Nav />
-        <main className="flex-1 pt-24">
-          <Outlet />
-        </main>
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <TreatmentProvider>
+        <div className="flex flex-col min-h-screen relative overflow-hidden">
+          {/* Optional background grain */}
+          <div className="pointer-events-none fixed inset-0 bg-grain opacity-[0.03] mix-blend-overlay z-50" />
+          
+          <Nav />
+          <main className="flex-1 pt-24">
+            <Outlet />
+          </main>
+          <Footer />
+          <WhatsAppButton />
+          <TreatmentModal />
+        </div>
+      </TreatmentProvider>
     </QueryClientProvider>
   );
 }
