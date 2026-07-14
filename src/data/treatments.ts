@@ -8,6 +8,7 @@ export interface Treatment {
   indications: string;
   category: "facial" | "corporal" | "injetavel" | "clareamento";
   whatsappText: string;
+  imageUrl?: string;
 }
 
 export const treatmentsData: Treatment[] = [
