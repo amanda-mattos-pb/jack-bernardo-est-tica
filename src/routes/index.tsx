@@ -5,6 +5,15 @@ import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { BeforeAfterSlider } from "@/components/site/BeforeAfterSlider";
 import { TreatmentModal } from "@/components/site/TreatmentModal";
 import { treatmentsData, bestSellersIds, Treatment } from "@/data/treatments";
+import { JatoDePlasmaSection } from "@/components/site/JatoDePlasmaSection";
+import { ClareamentosSection } from "@/components/site/ClareamentosSection";
+import { EstriasSection } from "@/components/site/EstriasSection";
+import { QuemSouEuSection } from "@/components/site/QuemSouEuSection";
+import { ProcedimentosMaisVendidosOrbitSection } from "@/components/site/ProcedimentosMaisVendidosOrbitSection";
+import { TratamentosFaciaisOrbitSection } from "@/components/site/TratamentosFaciaisOrbitSection";
+import { TratamentosTransformamSection } from "@/components/site/TratamentosTransformamSection";
+import { TratamentoMuscularSection } from "@/components/site/TratamentoMuscularSection";
+import { VasinhosSection } from "@/components/site/VasinhosSection";
 import {
   Compass,
   Target,
@@ -120,201 +129,20 @@ export function Index() {
         </div>
       </section>
 
-      {/* Sobre Section */}
-      <section id="sobre" className="py-32 bg-paper relative overflow-hidden">
-        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-16 items-center">
-          <div className="md:col-span-5 relative group">
-            <div className="absolute -inset-3 bg-gradient-to-tr from-gold/25 via-rose/20 to-transparent rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
-            <img
-              src="/images/jack-about.jpeg"
-              alt="Dra. Jaquelyne Bernardo em atendimento"
-              className="relative w-full aspect-[3/4] object-cover bg-peach rounded-[2rem] shadow-xl shadow-cocoa/15 ring-1 ring-gold/15"
-            />
-            <div className="absolute -bottom-6 -right-6 w-64 p-6 bg-paper/95 rounded-2xl shadow-xl border border-gold/25 backdrop-blur-md hidden md:block">
-              <span className="font-display text-4xl text-gold leading-none block mb-1">"</span>
-              <p className="font-display italic text-xl text-cocoa leading-snug">
-                Elevar a autoestima com sofisticação e segurança.
-              </p>
-            </div>
-          </div>
-          <div className="md:col-span-7">
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4 inline-flex items-center gap-3">
-              <span className="h-px w-10 bg-gold" /> Conheça a Doutora
-            </span>
-            <h2 className="font-display text-5xl md:text-6xl mb-8 text-cocoa font-semibold">
-              Dra. Jaquelyne Bernardo
-            </h2>
-            <p className="text-ink/85 leading-relaxed text-lg mb-10">
-              Especialista em harmonização facial, corporal e glútea, a Dra. Jaquelyne Bernardo tem como propósito elevar a autoestima de suas pacientes através de tratamentos modernos, seguros e personalizados, proporcionando resultados naturais e excelência no atendimento.
-            </p>
+      {/* Sobre e Missão */}
+      <QuemSouEuSection />
 
-            {/* Missão, Visão, Valores Grid */}
-            <div className="grid md:grid-cols-3 gap-6 pt-8 border-t border-gold/15">
-              <div className="space-y-3">
-                <div className="size-10 bg-rose/40 rounded-full flex items-center justify-center border border-gold/10 text-gold">
-                  <Target className="size-5" />
-                </div>
-                <h3 className="font-display text-xl text-cocoa font-semibold">Missão</h3>
-                <p className="text-xs text-ink/70 leading-relaxed">
-                  Transformar a autoestima em confiança através de tratamentos estéticos seguros, inovadores e personalizados.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <div className="size-10 bg-rose/40 rounded-full flex items-center justify-center border border-gold/10 text-gold">
-                  <Compass className="size-5" />
-                </div>
-                <h3 className="font-display text-xl text-cocoa font-semibold">Visão</h3>
-                <p className="text-xs text-ink/70 leading-relaxed">
-                  Ser referência em harmonização corporal, facial e glútea no Nordeste, reconhecida pela excelência, inovação e resultados.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <div className="size-10 bg-rose/40 rounded-full flex items-center justify-center border border-gold/10 text-gold">
-                  <Award className="size-5" />
-                </div>
-                <h3 className="font-display text-xl text-cocoa font-semibold">Valores</h3>
-                <p className="text-[11px] text-ink/70 leading-normal font-mono uppercase tracking-wider flex flex-col gap-1">
-                  <span>✦ Ética</span>
-                  <span>✦ Segurança</span>
-                  <span>✦ Excelência</span>
-                  <span>✦ Transparência</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Novas Seções de Serviços Baseadas no Design */}
+      <JatoDePlasmaSection />
+      <ClareamentosSection />
+      <EstriasSection />
 
-      {/* Mais Procurados / Best Sellers Section */}
-      <section id="mais-procurados" className="py-32 bg-peach/25 relative overflow-hidden">
-        <div className="pointer-events-none absolute top-20 -right-20 w-[28rem] h-[28rem] rounded-full bg-rose/20 blur-3xl" />
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4 inline-flex items-center gap-3">
-              <span className="h-px w-10 bg-gold" /> Tratamentos em Destaque <span className="h-px w-10 bg-gold" />
-            </span>
-            <h2 className="font-display text-5xl md:text-6xl text-cocoa font-semibold">
-              Mais Procurados
-            </h2>
-            <p className="text-ink/65 text-xs font-mono uppercase tracking-wider mt-4">
-              Resultados reais · Confiança · Autoestima
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {bestSellers.map((treatment) => (
-              <div
-                key={treatment.id}
-                className="group relative bg-paper p-8 rounded-[2rem] border border-gold/15 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col justify-between"
-              >
-                <div>
-                  {treatment.imageUrl && (
-                    <div className="w-full h-40 mb-4 rounded-xl overflow-hidden border border-gold/10">
-                      <img src={treatment.imageUrl} alt={treatment.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    </div>
-                  )}
-                  <div className="flex justify-between items-start mb-6">
-                    <span className="size-8 rounded-full bg-rose/40 text-gold border border-gold/15 flex items-center justify-center font-mono text-xs font-semibold">
-                      ✦
-                    </span>
-                    <span className="text-[9px] font-mono text-gold uppercase tracking-widest bg-peach/50 px-3 py-1 rounded-full border border-gold/10">
-                      Mais Vendido
-                    </span>
-                  </div>
-                  <h3 className="font-display text-2.5xl text-cocoa mb-3 group-hover:text-gold transition-colors font-semibold leading-snug">
-                    {treatment.name}
-                  </h3>
-                  <p className="text-xs text-ink/70 leading-relaxed mb-6">
-                    {treatment.description.substring(0, 140)}...
-                  </p>
-                </div>
-                <div className="flex items-center justify-between pt-6 border-t border-gold/10">
-                  <button
-                    onClick={() => openTreatmentDetails(treatment.id)}
-                    className="text-[10px] uppercase tracking-[0.2em] font-semibold text-cocoa group-hover:text-gold transition-colors flex items-center gap-1.5 cursor-pointer"
-                  >
-                    Saiba Mais <ChevronRight className="size-3.5" />
-                  </button>
-                  <span className="text-[9px] font-mono text-ink/50 uppercase tracking-wider">
-                    {treatment.category === "injetavel" ? "Injetável" : "Corporal"}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Procedimentos Catalog Section */}
-      <section id="faciais" className="py-32 px-6 bg-paper relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4 inline-flex items-center gap-3">
-              <span className="h-px w-10 bg-gold" /> Catálogo de Estética <span className="h-px w-10 bg-gold" />
-            </span>
-            <h2 className="font-display text-5xl md:text-6xl text-cocoa font-semibold mb-6">
-              Nossos Procedimentos
-            </h2>
-
-            {/* Categorias Abas */}
-            <div className="flex flex-wrap justify-center gap-3 mt-10">
-              {[
-                { id: "facial", label: "Procedimentos Faciais" },
-                { id: "corporal", label: "Procedimentos Corporais" },
-                { id: "injetavel", label: "Injetáveis Corporais" },
-                { id: "clareamento", label: "Clareamentos Estéticos" }
-              ].map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id as any)}
-                  className={`px-8 py-3.5 rounded-full text-[9px] font-mono uppercase tracking-[0.2em] transition-all duration-300 cursor-pointer ${
-                    activeCategory === cat.id
-                      ? "bg-cocoa text-paper shadow-md border border-gold/30"
-                      : "bg-peach/30 text-cocoa hover:bg-peach/60 border border-gold/10"
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Grid de Procedimentos da Categoria */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-reveal">
-            {filteredTreatments.map((t, idx) => (
-              <div
-                key={t.id}
-                onClick={() => openTreatmentDetails(t.id)}
-                className="group bg-paper/60 p-6 rounded-2xl border border-gold/10 hover:border-gold/30 hover:bg-peach/10 transition-all duration-500 cursor-pointer flex flex-col justify-between"
-              >
-                <div>
-                  {t.imageUrl && (
-                    <div className="w-full h-32 mb-4 rounded-xl overflow-hidden border border-gold/10">
-                      <img src={t.imageUrl} alt={t.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                    </div>
-                  )}
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="font-mono text-[10px] text-gold">{(idx + 1).toString().padStart(2, "0")}.</span>
-                    <span className="size-5 rounded-full bg-peach/40 text-gold flex items-center justify-center border border-gold/10">
-                      <Info className="size-3" />
-                    </span>
-                  </div>
-                  <h3 className="font-display text-xl text-cocoa font-semibold mb-2 group-hover:text-gold transition-colors">
-                    {t.name}
-                  </h3>
-                  <p className="text-xs text-ink/75 leading-relaxed line-clamp-2">
-                    {t.subtitle}
-                  </p>
-                </div>
-                <div className="flex items-center gap-1 text-[9px] font-mono text-gold uppercase tracking-widest mt-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Ver Detalhes <ChevronRight className="size-3" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TratamentoMuscularSection />
+      <VasinhosSection />
+      
+      <ProcedimentosMaisVendidosOrbitSection />
+      <TratamentosFaciaisOrbitSection />
+      <TratamentosTransformamSection />
 
       {/* Resultados Antes & Depois Section */}
       <section id="resultados" className="py-32 bg-gradient-to-br from-cocoa via-[oklch(0.38_0.03_55)] to-cocoa text-paper px-6 relative overflow-hidden">
@@ -338,28 +166,28 @@ export function Index() {
             {/* Slider 1 */}
             <div className="space-y-6">
               <BeforeAfterSlider
-                beforeImage="/images/antes-depois-labial.jpeg"
-                afterImage="/images/antes-depois-labial.jpeg"
+                beforeImage="/images/SUA_FOTO_ANTES_AXILA.jpg"
+                afterImage="/images/SUA_FOTO_DEPOIS_AXILA.jpg"
                 beforeLabel="Antes"
-                afterLabel="Depois - Labial"
+                afterLabel="Depois - Axila"
               />
               <div className="text-center">
-                <h3 className="font-display text-2xl text-gold font-semibold">Preenchimento Labial</h3>
-                <p className="text-xs text-paper/70 font-mono uppercase tracking-widest mt-1">Harmonização e Volume</p>
+                <h3 className="font-display text-2xl text-gold font-semibold">Clareamento de Axilas</h3>
+                <p className="text-xs text-paper/70 font-mono uppercase tracking-widest mt-1">Pele Uniforme e Iluminada</p>
               </div>
             </div>
 
             {/* Slider 2 */}
             <div className="space-y-6">
               <BeforeAfterSlider
-                beforeImage="/images/antes-depois-perna.jpeg"
-                afterImage="/images/antes-depois-perna.jpeg"
+                beforeImage="/images/celulite_antes.png"
+                afterImage="/images/celulite_depois.png"
                 beforeLabel="Antes"
-                afterLabel="Depois - Protocolo Perna"
+                afterLabel="Depois - Celulite"
               />
               <div className="text-center">
-                <h3 className="font-display text-2xl text-gold font-semibold">Protocolo Jack B. Pernas</h3>
-                <p className="text-xs text-paper/70 font-mono uppercase tracking-widest mt-1">Definição e Microvasos</p>
+                <h3 className="font-display text-2xl text-gold font-semibold">Tratamento de Celulite</h3>
+                <p className="text-xs text-paper/70 font-mono uppercase tracking-widest mt-1">Pele Mais Firme e Lisa</p>
               </div>
             </div>
           </div>
