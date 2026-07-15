@@ -27,8 +27,8 @@ function ResultadosComponent() {
             {/* Slider 1 */}
             <div className="space-y-6">
               <BeforeAfterSlider
-                beforeImage="/images/SUA_FOTO_ANTES_AXILA.jpg"
-                afterImage="/images/SUA_FOTO_DEPOIS_AXILA.jpg"
+                beforeImage="/images/clareamento_antes_axila.jpg"
+                afterImage="/images/clareamento_depois_axila.jpg"
                 beforeLabel="Antes"
                 afterLabel="Depois - Axila"
               />
