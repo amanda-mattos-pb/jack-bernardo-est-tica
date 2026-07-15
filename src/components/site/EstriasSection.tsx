@@ -58,8 +58,8 @@ export function EstriasSection() {
       rightContent={
         <BeforeAfterGrid 
           items={[
-            { title: "Estrias Avermelhadas", beforeImg: "/images/estrias_antes_1.png", afterImg: "/images/estrias_depois_1.png" },
-            { title: "Estrias nas Coxas", beforeImg: "/images/estrias_antes_1.png", afterImg: "/images/estrias_depois_1.png" },
+            { title: "Estrias Avermelhadas", beforeImg: "/images/estrias_vermelhas_antes.jpg", afterImg: "/images/estrias_vermelhas_depois.jpg" },
+            { title: "Estrias nas Pernas", beforeImg: "/images/estrias_pernas_antes.jpg", afterImg: "/images/estrias_pernas_depois.jpg" },
           ]}
         />
       }

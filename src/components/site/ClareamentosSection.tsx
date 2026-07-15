@@ -44,7 +44,7 @@ export function ClareamentosSection() {
         <BeforeAfterGrid 
           items={[
             { title: "Tratamento de Melasma", beforeImg: "/images/clareamento_antes_1.png", afterImg: "/images/clareamento_depois_1.png" },
-            { title: "Clareamento de Axilas" },
+            { title: "Clareamento de Axilas", beforeImg: "/images/clareamento_antes_axila.jpg", afterImg: "/images/clareamento_depois_axila.jpg" },
           ]}
         />
       }
