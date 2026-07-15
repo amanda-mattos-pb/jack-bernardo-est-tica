@@ -139,12 +139,6 @@ export function InjetaveisCorporaisSection() {
           })}
         </div>
 
-        {/* Trust Badge */}
-        <div className="mt-16 text-center max-w-2xl mx-auto bg-peach/10 border border-gold/20 rounded-2xl p-6">
-          <p className="text-xs md:text-sm text-cocoa/90 font-medium leading-relaxed">
-            ✨ Todos os nossos injetáveis utilizam produtos das melhores marcas do mercado (ácido hialurônico, bioestimuladores e enzimas), aplicados por profissional pós-graduada e altamente qualificada.
-          </p>
-        </div>
 
       </div>
     </section>
