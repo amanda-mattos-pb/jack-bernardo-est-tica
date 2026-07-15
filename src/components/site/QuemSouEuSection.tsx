@@ -46,7 +46,7 @@ export function QuemSouEuSection() {
             </div>
           </div>
           
-          <div className="lg:col-span-7 relative h-full min-h-[600px] rounded-[3rem] overflow-hidden border-4 border-beige shadow-2xl">
+          <div className="lg:col-span-7 relative aspect-[4/5] sm:aspect-auto sm:h-[500px] lg:h-full lg:min-h-[600px] rounded-[3rem] overflow-hidden border-4 border-beige shadow-2xl">
             <img 
               src="/images/jack-about.jpeg" 
               alt="Dra. Jaquelyne Bernardo" 
@@ -98,11 +98,11 @@ export function QuemSouEuSection() {
             </div>
           </div>
           
-          <div className="lg:col-span-6 relative h-full min-h-[500px] rounded-[2.5rem] overflow-hidden border border-gold/20 shadow-xl">
+          <div className="lg:col-span-6 relative aspect-[4/5] sm:aspect-auto sm:h-[450px] lg:h-full lg:min-h-[500px] rounded-[2.5rem] overflow-hidden border border-gold/20 shadow-xl">
              <img 
               src="/images/jack-portrait.jpeg" 
               alt="Dra. Jaquelyne Bernardo - Missão e Visão" 
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-top"
               onError={(e) => {
                 e.currentTarget.src = 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800';
               }}

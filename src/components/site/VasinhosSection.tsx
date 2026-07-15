@@ -63,7 +63,7 @@ export function VasinhosSection() {
         </div>
         
         {/* Right Content */}
-        <div className="lg:col-span-6 relative h-[600px] lg:h-[700px] -mx-6 lg:mx-0 order-1 lg:order-2">
+        <div className="lg:col-span-6 relative aspect-[4/3] sm:aspect-auto sm:h-[500px] lg:h-[700px] -mx-6 lg:mx-0 order-1 lg:order-2">
           <div className="absolute inset-0 bg-gradient-to-r from-paper/0 via-paper/50 to-paper lg:hidden z-10 pointer-events-none" />
           <img 
             src="/images/real_legs_1.jpg" 
