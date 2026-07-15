@@ -52,8 +52,8 @@ export function JatoDePlasmaSection() {
         <div className="relative">
           <div className="w-full aspect-square md:aspect-[4/5] rounded-[2.5rem] overflow-hidden border-2 border-gold/20 shadow-2xl relative">
             <img 
-              src="/images/jato-de-plasma-ref.jpg" 
-              alt="Aplicação do Jato de Plasma" 
+              src="/images/sinal.jpg" 
+              alt="Remoção de Sinais" 
               className="w-full h-full object-cover" 
               onError={(e) => {
                 e.currentTarget.src = 'https://images.unsplash.com/photo-1512496015851-a1c8f1922c06?auto=format&fit=crop&q=80&w=800';

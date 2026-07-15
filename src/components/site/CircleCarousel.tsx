@@ -1,4 +1,7 @@
+import { useTreatment } from "../../context/TreatmentContext";
+
 export interface CarouselItem {
+  id?: string;
   image: string;
   title: string;
   description: string;
@@ -13,6 +16,8 @@ export function CircleCarousel({
   subtitle: string;
   items: CarouselItem[];
 }) {
+  const { openTreatmentDetails } = useTreatment();
+
   return (
     <section className="py-24 bg-paper relative overflow-hidden border-y border-gold/15">
        <div className="max-w-7xl mx-auto px-6">
@@ -27,7 +32,11 @@ export function CircleCarousel({
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4">
              {items.map((item, idx) => (
-               <div key={idx} className="flex flex-col items-center text-center group cursor-pointer">
+               <div 
+                 key={idx} 
+                 className="flex flex-col items-center text-center group cursor-pointer"
+                 onClick={() => openTreatmentDetails(item.id || item.title)}
+               >
                  <div className="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden shadow-lg border border-gold/20 mb-6 bg-peach">
                     <img 
                       src={item.image} 

@@ -120,6 +120,7 @@ export const treatmentsData: Treatment[] = [
       "Conforto total com o uso de anestesia local"
     ],
     indications: "Indicado para remoção de sinais benignos superficiais, verrugas pingentes (acrocórdons) em pescoço e axilas, e pequenas lesões estéticas, após avaliação.",
+    imageUrl: "/images/sinal.jpg",
     category: "facial",
     whatsappText: "Olá Jack, gostaria de avaliar alguns sinais para remoção."
   },
@@ -342,8 +343,32 @@ export const treatmentsData: Treatment[] = [
       "Resultados naturais, progressivos e duradouros"
     ],
     indications: "O Jato de Plasma é indicado para quem deseja tratar flacidez de pálpebras, rugas, cicatrizes de acne, estrias, manchas e poros dilatados, promovendo uma pele mais jovem e saudável.",
+    imageUrl: "/images/sinal.jpg",
     category: "facial",
     whatsappText: "Olá Jack, gostaria de agendar uma avaliação para Jato de Plasma."
+  },
+  {
+    id: "harmonizacao-facial",
+    name: "Harmonização Facial",
+    subtitle: "Equilíbrio, proporção e realce natural dos traços do seu rosto",
+    description: "A Harmonização Facial é um conjunto de procedimentos estéticos combinados para equilibrar e destacar a beleza natural do rosto. Personalizado de acordo com a anatomia de cada paciente, o tratamento utiliza preenchedores de ácido hialurônico, toxina botulínica e bioestimuladores para suavizar rugas, definir o contorno mandibular, projetar o queixo e valorizar as maçãs do rosto.",
+    howItWorks: [
+      "Avaliação facial detalhada com mapeamento das proporções e assimetrias.",
+      "Definição de um plano de tratamento personalizado combinando técnicas.",
+      "Aplicação de anestésico local para total conforto do paciente durante as sessões.",
+      "Realização dos procedimentos (Botox, preenchedores ou estimuladores de colágeno) de forma estratégica."
+    ],
+    benefits: [
+      "Realça os traços mais belos e harmoniza as proporções faciais",
+      "Suaviza linhas de expressão e rugas dinâmicas",
+      "Define o contorno da mandíbula e melhora a projeção do queixo",
+      "Devolve o volume perdido pelo envelhecimento natural",
+      "Resultados extremamente naturais e elegantes"
+    ],
+    indications: "Indicado para homens e mulheres que desejam melhorar a simetria facial, suavizar os efeitos do envelhecimento, definir contornos e realçar a beleza do rosto de forma personalizada.",
+    imageUrl: "/images/real_facial_1.jpg",
+    category: "facial",
+    whatsappText: "Olá Jack, gostaria de fazer uma avaliação para Harmonização Facial."
   },
 
   // CORPORAIS
