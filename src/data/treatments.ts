@@ -771,6 +771,138 @@ export const treatmentsData: Treatment[] = [
     indications: "Indicado para quem tem axilas escurecidas ou manchadas pós-depilação e quer resgatar o tom uniforme da pele.",
     category: "clareamento",
     whatsappText: "Olá Jack, gostaria de agendar sessões de Clareamento de Axilas."
+  },
+  {
+    id: "eletrolipolise",
+    name: "Eletrolipólise",
+    subtitle: "Microcorrentes para redução de gordura localizada",
+    description: "A eletrolipólise é um tratamento estético que utiliza agulhas de acupuntura ultra-finas inseridas no tecido subcutâneo associadas a uma corrente elétrica de baixa frequência. Essa estimulação elétrica estimula a quebra de lipídios (lipólise) e melhora a circulação local, auxiliando a eliminação de gordura localizada resistente.",
+    howItWorks: [
+      "Agulhas de acupuntura descartáveis e estéreis são inseridas na camada de gordura.",
+      "Conectam-se eletrodos especiais às agulhas.",
+      "Aplica-se uma microcorrente elétrica de baixa frequência totalmente controlada.",
+      "A corrente atua destruindo as membranas celulares e liberando a gordura acumulada."
+    ],
+    benefits: [
+      "Ação focada na gordura localizada mais difícil de eliminar",
+      "Melhora extraordinária do contorno e redução de centímetros",
+      "Ativa o fluxo circulatório sanguíneo e linfático local",
+      "Auxilia na diminuição do aspecto da celulite associada",
+      "Procedimento realizado com total biossegurança"
+    ],
+    indications: "Indicado para gordura localizada no abdômen, culotes, flancos e coxas.",
+    category: "corporal",
+    whatsappText: "Olá Jack, gostaria de saber mais informações sobre a Eletrolipólise."
+  },
+  {
+    id: "ozonioterapia",
+    name: "Ozonioterapia Corporal",
+    subtitle: "Poder medicinal do ozônio para metabolismo e estética",
+    description: "A ozonioterapia corporal consiste na aplicação de uma mistura de oxigênio e ozônio medicinal sob a pele. O ozônio atua como um potente oxidante local que estimula a quebra de células de gordura, reduz a inflamação de celulites, combate a flacidez e otimiza a microcirculação e o metabolismo sistêmico.",
+    howItWorks: [
+      "O gás de ozônio medicinal é preparado em concentrações específicas.",
+      "Aplica-se o gás de forma subcutânea na área a ser tratada com agulha de insulina.",
+      "O ozônio interage com as células promovendo oxigenação profunda do tecido.",
+      "Estimula a drenagem de toxinas acumuladas e a quebra de gordura local."
+    ],
+    benefits: [
+      "Acelera a queima de gordura localizada",
+      "Potente ação anti-inflamatória e melhora da celulite",
+      "Aumenta a oxigenação celular e regeneração tecidual",
+      "Melhora o sistema circulatório e linfático local",
+      "Tratamento autólogo, natural e com múltiplos benefícios à saúde"
+    ],
+    indications: "Indicado para tratamento de celulites inflamatórias, gordura localizada, flacidez e melhoria da circulação periférica.",
+    category: "corporal",
+    whatsappText: "Olá Jack, quero saber sobre a Ozonioterapia Corporal."
+  },
+  {
+    id: "criofrequencia",
+    name: "Criofrequência",
+    subtitle: "Frio na superfície e calor profundo contra flacidez e gordura",
+    description: "A criofrequência é uma tecnologia inovadora que combina um cabeçote resfriado a temperaturas negativas (até -10°C) na superfície com ondas eletromagnéticas de radiofrequência multipolar e monopolar que aquecem as camadas profundas. Esse choque térmico imediato gera a contração instantânea do colágeno e a quebra de gordura.",
+    howItWorks: [
+      "O cabeçote resfriado a frio intenso é deslizado sobre a pele protegida por gel.",
+      "Enquanto a pele por fora é resfriada, a energia de radiofrequência aquece as camadas internas.",
+      "Ocorre um forte choque térmico que contrai imediatamente as fibras de sustentação.",
+      "Estimula a síntese de colágeno novo de forma prolongada nos dias seguintes."
+    ],
+    benefits: [
+      "Efeito lifting corporal imediato (efeito cinderela na pele)",
+      "Eliminação de gordura localizada por apoptose térmica",
+      "Combate de forma altamente eficaz a flacidez de pele",
+      "Procedimento extremamente confortável devido ao resfriamento da ponteira",
+      "Tratamento seguro e sem necessidade de tempo de recuperação"
+    ],
+    indications: "Indicado para flacidez corporal, celulite flácida, papada e gordura localizada associada à flacidez.",
+    category: "corporal",
+    whatsappText: "Olá Jack, gostaria de agendar uma avaliação para Criofrequência."
+  },
+  {
+    id: "plataforma-vibratoria",
+    name: "Plataforma Vibratória",
+    subtitle: "Estímulo neuromuscular e drenagem através de vibrações oscilatórias",
+    description: "O uso da plataforma vibratória na estética atua transmitindo vibrações mecânicas oscilatórias para todo o corpo. Essas vibrações geram contrações musculares reflexas rápidas que aumentam o tônus muscular, estimulam a circulação linfática para eliminar líquidos e otimizam os resultados dos tratamentos corporais.",
+    howItWorks: [
+      "A paciente se posiciona sobre a plataforma vibratória em posturas específicas.",
+      "O equipamento gera vibrações em frequências controladas por cerca de 10 a 15 minutos.",
+      "Os músculos contraem involuntariamente de 30 a 50 vezes por segundo.",
+      "O fluxo de retorno linfático e sanguíneo é acelerado imediatamente."
+    ],
+    benefits: [
+      "Aumenta a tonificação muscular e a força reflexa",
+      "Acelera a eliminação de líquidos retidos e inchaço nas pernas",
+      "Estimula a queima calórica e o metabolismo corporal",
+      "Melhora a densidade óssea e a flexibilidade das articulações",
+      "Excelente coadjuvante pós-tratamentos de quebra de gordura"
+    ],
+    indications: "Indicado para fortalecimento de pernas e glúteos, drenagem de líquidos retidos, combate à celulite e otimização de queima metabólica.",
+    category: "corporal",
+    whatsappText: "Olá Jack, quero saber como funciona a Plataforma Vibratória."
+  },
+  {
+    id: "tratamento-fibroses",
+    name: "Tratamento para Fibroses",
+    subtitle: "Reabilitação e suavização de aderências cicatriciais pós-cirúrgicas",
+    description: "O protocolo para fibroses é especializado na prevenção e tratamento daquelas ondulações duras, doloridas e disformes que se formam sob a pele após cirurgias como lipoaspiração ou abdominoplastia. Associa o uso de aparelhos de radiofrequência controlada, ultrassom e terapia manual específica para devolver a maleabilidade e maciez à pele.",
+    howItWorks: [
+      "Avaliação detalhada do tempo de cirurgia e do grau de fibrose tecidual.",
+      "Uso de ultrassom de alta frequência ou radiofrequência em parâmetros atérmicos seguros.",
+      "Aplicação de técnicas manuais como liberação tecidual miofascial e drenagem.",
+      "Suavização gradual das traves cicatriciais rígidas formadas no subcutâneo."
+    ],
+    benefits: [
+      "Alívio da dor, rigidez e sensação de pele 'esticada' ou repuxando",
+      "Suaviza as irregularidades, nódulos e depressões na pele do abdômen/flancos",
+      "Restabelece a circulação linfática e acelera a eliminação do edema tardio",
+      "Devolve a mobilidade natural dos tecidos de forma segura",
+      "Essencial para garantir o resultado estético ideal da cirurgia plástica"
+    ],
+    indications: "Indicado para pacientes em pós-operatório recente ou tardio de cirurgias plásticas corporais que apresentam nódulos e fibrose.",
+    category: "corporal",
+    whatsappText: "Olá Jack, preciso de tratamento para fibroses pós-operatórias."
+  },
+  {
+    id: "remodelacao-corporal",
+    name: "Remodelação Corporal",
+    subtitle: "Protocolo associativo premium para redefinir as curvas do corpo",
+    description: "O protocolo de Remodelação Corporal associa de forma personalizada as melhores tecnologias (como criolipólise, ultrassom cavitacional, corrente russa e massagem modeladora mecânica) em um plano de tratamento contínuo. É projetado sob medida para redesenhar a silhueta, reduzir medidas, levantar o bumbum e tratar flacidez de forma global.",
+    howItWorks: [
+      "Avaliação corporal completa com mapeamento de medidas e objetivos da paciente.",
+      "Desenho de um cronograma semanal associando diferentes aparelhos e técnicas.",
+      "Alternância entre tratamentos lipolíticos, tensores e de tonificação muscular.",
+      "Acompanhamento e fotos de evolução para ajuste fino de cada sessão."
+    ],
+    benefits: [
+      "Resultados abrangentes tratando gordura, flacidez e músculos ao mesmo tempo",
+      "Redefinição completa das curvas corporais e cintura",
+      "Redução visível e contínua de medidas e gordura localizada",
+      "Pele com melhor textura, firmeza e tônus muscular elevado",
+      "Protocolo 100% individualizado para as reais necessidades do seu corpo"
+    ],
+    indications: "Indicado para quem deseja uma transformação corporal completa, modelagem de cintura, glúteos e pernas sem intervenção cirúrgica.",
+    category: "corporal",
+    whatsappText: "Olá Jack, gostaria de agendar uma avaliação para Remodelação Corporal."
   }
 ];
 
