@@ -98,6 +98,7 @@ export const treatmentsData: Treatment[] = [
       "Melhora a autoestima e a autoconfiança"
     ],
     indications: "Indicado para pacientes que possuem gordura submentoniana (papada) e desejam um pescoço mais alongado e contorno mandibular mais definido.",
+    imageUrl: "/images/papada_info.png",
     category: "facial",
     whatsappText: "Olá Jack, gostaria de agendar uma avaliação para Tratamento de Papada."
   },
@@ -343,7 +344,7 @@ export const treatmentsData: Treatment[] = [
       "Resultados naturais, progressivos e duradouros"
     ],
     indications: "O Jato de Plasma é indicado para quem deseja tratar flacidez de pálpebras, rugas, cicatrizes de acne, estrias, manchas e poros dilatados, promovendo uma pele mais jovem e saudável.",
-    imageUrl: "/images/sinal.jpg",
+    imageUrl: "/images/jato_plasma_info.png",
     category: "facial",
     whatsappText: "Olá Jack, gostaria de agendar uma avaliação para Jato de Plasma."
   },
@@ -746,7 +747,8 @@ export const treatmentsData: Treatment[] = [
       "Melhora o aspecto estético geral e a autoestima íntima",
       "Resultados graduais seguros e duradouros"
     ],
-    indications: "Indicado para pessoas que apresentam escurecimento na virilha, grandes lábios, região perianal ou interno de coxas devido ao atrito de roupas ou depilação.",
+    indications: "Indicado para pessoas que apresentam escurecimento na virilha, grandes lábios, region perianal ou interno de coxas devido ao atrito de roupas ou depilação.",
+    imageUrl: "/images/clareamentos_info.jpg",
     category: "clareamento",
     whatsappText: "Olá Jack, gostaria de informações sobre o Clareamento Íntimo."
   },
@@ -769,6 +771,7 @@ export const treatmentsData: Treatment[] = [
       "Rápido, prático e indolor"
     ],
     indications: "Indicado para quem tem axilas escurecidas ou manchadas pós-depilação e quer resgatar o tom uniforme da pele.",
+    imageUrl: "/images/clareamentos_info.jpg",
     category: "clareamento",
     whatsappText: "Olá Jack, gostaria de agendar sessões de Clareamento de Axilas."
   },
@@ -903,6 +906,28 @@ export const treatmentsData: Treatment[] = [
     indications: "Indicado para quem deseja uma transformação corporal completa, modelagem de cintura, glúteos e pernas sem intervenção cirúrgica.",
     category: "corporal",
     whatsappText: "Olá Jack, gostaria de agendar uma avaliação para Remodelação Corporal."
+  },
+  {
+    id: "tratamento-estrias",
+    name: "Tratamento de Estrias",
+    subtitle: "Pele mais uniforme, lisa e renovada",
+    description: "O tratamento de estria é um conjunto de técnicas e tecnologias que estimulam a regeneração da pele, aumentam a produção de colágeno e melhoram a elasticidade, reduzindo a aparência das estrias e devolvendo mais firmeza, textura e uniformidade à pele.",
+    howItWorks: [
+      "Estimula o colágeno e a elastina: ativa a regeneração celular.",
+      "Renovação cutânea: promove a renovação das camadas profundas da pele.",
+      "Hidratação profunda: melhora a textura e a resistência da pele."
+    ],
+    benefits: [
+      "Redução visível das estrias",
+      "Estimula a produção de colágeno e elastina",
+      "Melhora da textura e da elasticidade",
+      "Pele mais hidratada, macia e resistente",
+      "Mais autoestima e confiança com resultados progressivos"
+    ],
+    indications: "Indicado para quem deseja reduzir a aparência das estrias brancas e vermelhas e melhorar a qualidade da pele.",
+    imageUrl: "/images/estrias_info.png",
+    category: "corporal",
+    whatsappText: "Olá Jack, gostaria de agendar uma avaliação para Tratamento de Estrias."
   }
 ];
 

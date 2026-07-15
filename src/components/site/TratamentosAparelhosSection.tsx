@@ -22,7 +22,8 @@ export function TratamentosAparelhosSection() {
     { id: "enzimas-para-celulite", title: "Tratamento para Celulite", desc: "Associação de tecnologias para restaurar a circulação e alisar a pele.", icon: Heart },
     { id: "enzimas-para-flacidez", title: "Tratamento para Flacidez Corporal", desc: "Protocolo tensor que estimula novas fibras de colágeno e sustentação.", icon: Sparkles },
     { id: "tratamento-de-papada", title: "Tratamento para Papada", desc: "Eliminação da gordura submentoniana e definição do contorno da mandíbula.", icon: Shield },
-    { id: "remodelacao-corporal", title: "Remodelação Corporal", desc: "Protocolo associativo com múltiplos aparelhos para redefinir as curvas.", icon: Compass }
+    { id: "remodelacao-corporal", title: "Remodelação Corporal", desc: "Protocolo associativo com múltiplos aparelhos para redefinir as curvas.", icon: Compass },
+    { id: "tratamento-estrias", title: "Tratamento de Estrias", desc: "Protocolo completo com tecnologia para regeneração de estrias brancas e vermelhas.", icon: Sparkles }
   ];
 
   return (
