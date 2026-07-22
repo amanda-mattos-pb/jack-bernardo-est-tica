@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, MouseEvent, TouchEvent } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -17,6 +17,7 @@ export function BeforeAfterSlider({
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50); // percentage (0-100)
   const [isDragging, setIsDragging] = useState(false);
+  const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleMove = (clientX: number) => {
@@ -27,25 +28,53 @@ export function BeforeAfterSlider({
     setSliderPosition(position);
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
-    if (!isDragging) return;
-    handleMove(e.clientX);
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    if (!isDragging) return;
-    if (e.touches.length > 0) {
-      handleMove(e.touches[0].clientX);
-    }
-  };
-
+  // Track container width for non-squished image positioning
   useEffect(() => {
-    const handleMouseUp = () => setIsDragging(false);
-    if (isDragging) {
-      window.addEventListener("mouseup", handleMouseUp);
-      window.addEventListener("touchend", handleMouseUp);
-    }
+    if (!containerRef.current) return;
+
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+
+    updateWidth();
+
+    // Listen to resize and use ResizeObserver for modern reactivity
+    window.addEventListener("resize", updateWidth);
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(containerRef.current);
+
     return () => {
+      window.removeEventListener("resize", updateWidth);
+      observer.disconnect();
+    };
+  }, []);
+
+  // Listen to mouse/touch drag globally
+  useEffect(() => {
+    if (!isDragging) return;
+
+    const handleMouseMove = (e: globalThis.MouseEvent) => {
+      handleMove(e.clientX);
+    };
+
+    const handleTouchMove = (e: globalThis.TouchEvent) => {
+      if (e.touches.length > 0) {
+        handleMove(e.touches[0].clientX);
+      }
+    };
+
+    const handleMouseUp = () => setIsDragging(false);
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("touchend", handleMouseUp);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("touchend", handleMouseUp);
     };
@@ -54,11 +83,9 @@ export function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full aspect-[3/4] overflow-hidden select-none rounded-[2rem] shadow-xl border border-gold/20 bg-paper cursor-ew-resize ${className}`}
+      className={`relative w-full aspect-[3/4] overflow-hidden select-none rounded-[2rem] shadow-xl border border-gold/20 bg-paper cursor-ew-resize touch-pan-y ${className}`}
       onMouseDown={() => setIsDragging(true)}
       onTouchStart={() => setIsDragging(true)}
-      onMouseMove={handleMouseMove}
-      onTouchMove={handleTouchMove}
     >
       {/* After Image (Background) */}
       <img
@@ -79,8 +106,8 @@ export function BeforeAfterSlider({
         <img
           src={beforeImage}
           alt="Antes do procedimento"
-          className="absolute inset-0 w-full h-full object-cover max-w-none pointer-events-none"
-          style={{ width: containerRef.current?.offsetWidth || "100%" }}
+          className="absolute top-0 left-0 h-full object-cover max-w-none pointer-events-none"
+          style={{ width: containerWidth ? `${containerWidth}px` : "100%" }}
           loading="lazy"
         />
         <div className="absolute left-4 bottom-4 px-3 py-1 bg-gold/90 text-paper backdrop-blur-md rounded-full text-[9px] font-mono uppercase tracking-widest z-10 border border-white/10">
